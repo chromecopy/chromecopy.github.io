@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Copy Master</title>
+    <link rel="shortcut icon" href="images/icon16.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 800px;
+            margin: 3em auto;
+        }
+
+        h1 {
+            display: inline;
+            vertical-align: top;
+            font-size: 32px;
+            margin: 0;
+        }
+
+        ul {
+            display: inline-block;
+            margin: 0;
+        }
+
+        .download {
+            display: inline-block;
+            font-weight: 900;
+            margin: 3em 0 1em 0;
+            padding: 10px;
+            height: auto;
+            width: auto;
+            text-decoration: none;
+        }
+
+        .download .icon {
+            margin: 0 auto;
+            position: relative;
+            height: 50px;
+            width: 50px;
+        }
+
+        .download .icon .arrow {
+            position: absolute;
+            left: 19px;
+            top: 18px;
+            transition: top 100ms ease;
+        }
+
+        .download.open .icon .arrow {
+            position: absolute;
+            left: 19px;
+            top: 25px;
+        }
+
+        .download a {
+            cursor: pointer;
+        }
+
+        .download .menu {
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 100ms ease;
+        }
+
+        .download.open .menu {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        .download .menu a {
+            position: relative;
+            display: inline-block;
+            width: 10em;
+        }
+
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <img src="images/icon32.png" />
+        <h1>Copy Master</h1>
+        <img src="images/icon32.png" />
+
+        <br />
+
+        <div class="download" onmouseover="downloadMenu(true)" onmouseout="downloadMenu(false)">
+            <div class="icon">
+                <img class="cloud" src="images/cloud.png" />
+                <img class="arrow" src="images/arrow.png" />
+            </div>
+            <div class="menu">
+                <a>
+                    <span>Bookmark</span>
+                    <br />
+                    <img src="images/bookmark.png" />
+                </a>
+                <a>
+                    <span>Chrome extension</span>
+                    <br />
+                    <img src="images/chrome.png" />
+                </a>
+                <a>
+                    <span>All data</span>
+                    <br />
+                    <img src="images/github.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Overveiw</h2>
+    Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots. Currently
+    not avalible on the toolbar.
+
+    <h2>Permissions</h2>
+    Copy Master need the permission: 'declarativeContent' to get access to websites and
+    permission: 'storage' to store the clipboard to remember the clipboard not only on the active tab but also to store
+    it to other tabs.
+    <br />
+    <br />
+    <ul>
+        <li>declarativeContent</li>
+        <li>storage</li>
+    </ul>
+
+    <h2>Shortcuts</h2>
+    <b>Copy</b>: Alt + 1-9
+    <br />
+    <b>Paste</b>: Alt + Shift + 1-9
+
+    <script>
+        function downloadMenu(show) {
+            if (show)
+                document.querySelector(".download").classList.add("open");
+            else
+                document.querySelector(".download").classList.remove("open");
+        }
+    </script>
+</body>
+
+</html>
