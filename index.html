@@ -147,7 +147,11 @@
 
     <h2>Installation</h2>
 
-    <b>1.</b> Download .js file <a download="download" href="content.min.js">here</a> or <button onclick="copy()">Copy</button>
+    <b>1.</b> Download <a download="download" href="content.min.js">js</a>,
+    <a download="download" href="content.min.js.zip">zip</a>,
+    <a download="download" href="content.min.js.7z">7z</a>, or
+
+    <button onclick="copy()">Copy</button>
     <input id="bookmarkjs" onclick="this.select();this.setSelectionRange(0, 9999999)" value='javascript: var selectedText="",clipboard={1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""};
         function paste(e){document.execCommand("insertHTML",!1,clipboard[e])}
         function copy(e){clipboard[e]=selectedText,chrome.storage.sync.set({clipboard:clipboard})}
