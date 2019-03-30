@@ -14,7 +14,7 @@
             margin: 3em auto;
         }
 
-        h1 {
+        .title h1 {
             display: inline;
             vertical-align: top;
             font-size: 32px;
@@ -80,6 +80,10 @@
         .title {
             text-align: center;
         }
+
+        .icon {
+            height: 1em;
+        }
     </style>
 </head>
 
@@ -97,17 +101,17 @@
                 <img class="arrow" src="images/arrow.png" />
             </div>
             <div class="menu">
-                <a>
+                <a href="#bookmark">
                     <span>Bookmark</span>
                     <br />
                     <img src="images/bookmark.png" />
                 </a>
-                <a>
+                <a href="https://chrome.google.com/webstore/">
                     <span>Chrome extension</span>
                     <br />
                     <img src="images/chrome.png" />
                 </a>
-                <a>
+                <a href="https://github.com/chromecopy/copymaster">
                     <span>All data</span>
                     <br />
                     <img src="images/github.png" />
@@ -136,12 +140,49 @@
     <br />
     <b>Paste</b>: Alt + Shift + 1-9
 
+    <br />
+    <br />
+
+    <h1 id="bookmark">Bookmark</h1>
+
+    <h2>Installation</h2>
+
+    <b>1.</b> Download .js file <a download="download" href="content.min.js">here</a> or <button onclick="copy()">Copy</button>
+    <input id="bookmarkjs" onclick="this.select();this.setSelectionRange(0, 9999999)" value='javascript: var selectedText="",clipboard={1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""};
+        function paste(e){document.execCommand("insertHTML",!1,clipboard[e])}
+        function copy(e){clipboard[e]=selectedText,chrome.storage.sync.set({clipboard:clipboard})}
+        function updateSelectedText(){window.getSelection?selectedText=window.getSelection().toString():document.selection&&"Control"!=
+        document.selection.type&&(selectedText=document.selection.createRange().text)}setInterval(updateSelectedText,100),
+        document.addEventListener("keydown",function(e){
+        e.altKey&&e.shiftKey&&e.code.includes("Digit")?paste(parseInt(e.code.replace("Digit",""))):e.altKey&&e.code.includes("Digit")&&
+        copy(parseInt(e.code.replace("Digit","")))});' /> the text.
+
+    <br />
+    <br />
+
+    <b>2. </b> <a target="_new" href="https://www.computerhope.com/issues/ch000858.htm">Create a bookmark  (www.computerhope.com)</a> and paste the code in the url field to activate it.
+
+    <h2>How to use</h2>
+
+    When finished with the installation, click on <img class="icon" src="images/icon16.png" /> in the bookmark field.
+
+    <br />
+    <br />
+
+    <b style="color:#aa5555">Disadvantage:</b> You will have to use the bookmark on each website.
+
+
     <script>
         function downloadMenu(show) {
             if (show)
                 document.querySelector(".download").classList.add("open");
             else
                 document.querySelector(".download").classList.remove("open");
+        }
+        function copy() {
+            document.querySelector("#bookmarkjs").select();
+            document.querySelector("#bookmarkjs").setSelectionRange(0, 9999999);
+            document.execCommand("copy");
         }
     </script>
 </body>
