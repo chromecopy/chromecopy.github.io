@@ -4,253 +4,135 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Copy Master</title>
-    <link rel="shortcut icon" href="images/icon16.png" type="image/x-icon">
     <meta name="google-site-verification" content="aQ1go31Xs0_IY81y4ueMNKoG1XdkQ1HrzJcCSjG2KXc" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            max-width: 800px;
-            margin: 3em auto;
-        }
-
-        .title h1 {
-            display: inline;
-            vertical-align: top;
-            font-size: 32px;
-            margin: 0;
-        }
-
-        ul {
-            display: inline-block;
-            margin: 0;
-        }
-
-        .download {
-            display: inline-block;
-            font-weight: 900;
-            margin: 3em 0 1em 0;
-            padding: 10px;
-            height: auto;
-            width: auto;
-            text-decoration: none;
-        }
-
-        .download .icon {
-            margin: 0 auto;
-            position: relative;
-            height: 50px;
-            width: 50px;
-        }
-
-        .download .icon .arrow {
-            position: absolute;
-            left: 19px;
-            top: 18px;
-            transition: top 100ms ease;
-        }
-
-        .download.open .icon .arrow {
-            position: absolute;
-            left: 19px;
-            top: 25px;
-        }
-
-        .download a {
-            cursor: pointer;
-        }
-
-        .download .menu {
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 100ms ease;
-        }
-
-        .download.open .menu {
-            pointer-events: auto;
-            opacity: 1;
-        }
-
-        .download .menu a {
-            position: relative;
-            display: inline-block;
-            width: 10em;
-        }
-
-        .title {
-            text-align: center;
-        }
-
-        .icon {
-            height: 1em;
-        }
-
-        code {
-            background: #eee;
-            border-radius: 3px;
-            padding: .2em .5em;
-        }
-
-        input {
-            font-family: monospace;
-            background: #eee;
-            border-radius: 3px;
-            padding: .2em .5em;
-            margin: 0;
-            font-size: 1em;
-            border: .5px solid grey;
-            outline: 0;
-        }
-
-        ul {
-            list-style-type: lower-latin;
-        }
-    </style>
+    <title>Copy Master</title>
+    <link rel="shortcut icon" href="images/icon16.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="title">
-        <img src="images/icon32.png" />
-        <h1>Copy Master</h1>
-        <img src="images/icon32.png" />
+    <main>
+        <div class="title">
+            <img src="images/icon32.png" />
+            <h1>Copy Master</h1>
+            <img src="images/icon32.png" />
+            <h2><b style="color:#aa5555">Chrome extension : Delayed upload</b></h2>
 
-        <br />
+            <br />
 
-        <div class="download" onmouseover="downloadMenu(true)" onmouseout="downloadMenu(false)">
-            <div class="icon">
-                <img class="cloud" src="images/cloud.png" />
-                <img class="arrow" src="images/arrow.png" />
-            </div>
-            <div class="menu">
-                <a href="#bookmark">
-                    <span>Bookmark</span>
-                    <br />
-                    <img src="images/bookmark.png" />
-                </a>
-                <a href="/public.crx" download="download">
-                    <span>Chrome extension</span>
-                    <br />
-                    <img src="images/chrome.png" />
-                </a>
-                <a href="https://github.com/chromecopy/copymaster">
-                    <span>All data</span>
-                    <br />
-                    <img src="images/github.png" />
-                </a>
+            <div class="download open">
+                <div class="icon">
+                    <img class="cloud" src="images/cloud.png" />
+                    <img class="arrow" src="images/arrow.png" />
+                </div>
+                <div class="menu">
+                    <a href="#bookmark">
+                        <span>Bookmark</span>
+                        <br />
+                        <img src="images/bookmark.png" />
+                    </a>
+                    <a href="/public.crx" download="download">
+                        <span>Chrome extension</span>
+                        <br />
+                        <img src="images/chrome.png" />
+                    </a>
+                    <a href="https://github.com/chromecopy/copymaster">
+                        <span>All data</span>
+                        <br />
+                        <img src="images/github.png" />
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <h2>Overveiw</h2>
-    Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots. Currently
-    not avalible on the toolbar.
+        <h1>Overveiw</h1>
+        <b>Say goodbye to long copy paste!</b>
+        <br />
+        With copymaster you can copy you can quickly copy on up to 9 clipbaords
 
-    <h2>Permissions</h2>
-    Copy Master need the permission: 'declarativeContent' to get access to websites and
-    permission: 'storage' to store the clipboard to remember the clipboard not only on the active tab but also to store
-    it to other tabs.
-    <br />
-    <br />
-    <ul>
-        <li>declarativeContent</li>
-        <li>storage</li>
-    </ul>
+        <br />
+        <br />
 
-    <h2>Shortcuts</h2>
-    <b>Copy</b>: Alt + 1-9
-    <br />
-    <b>Paste</b>: Alt + Shift + 1-9
+        <b>Update comming shortly. Alt => Ctrl</b>
+        <br />
+        <ul>
+            <li>
+                Select <input spellcheck="false" style="width:3.4em" value='"this"' onclick="this.select();this.setSelectionRange(0, 6)" /> and press <code>Alt + 1</code> to
+                copy.
+            </li>
+            <li>
+                Select <input spellcheck="false" style="width:3.4em" value='"this"' onclick="this.select();this.setSelectionRange(0, 6)" /> and press
+                <code>Alt + Shift + 1</code> to replace.
+            </li>
+            <li>
+                <input spellcheck="false" style="width:2.7em" value="Click" onclick="this.setSelectionRange(5, 5);" /> and press <code>Alt + Shift + 1</code> to
+                paste.
+            </li>
+            <li>
+                Press <code>Ctrl + Shitf + 1</code> to set slot 1 to default
+            </li>
+            <li>
+                <input spellcheck="false" style="width:2.7em" value="Click" onclick="this.setSelectionRange(5, 5);" /> and press Ctrl + V to paste default
+            </li>
+        </ul>
+        <br />
+        <br />
 
-    <br />
-    <br />
+        <h3>Permissions</h3>
+        <ul>
+            <li>Declarative content</li>
+            <li>Storage</li>
+            <li>Context Menus</li>
+            <li><b style="color:#aa5555">Note!</b> Active Tab was by mistake added and will be removed the next version
+            </li>
+        </ul>
 
-    <h1>Chrome</h1>
+        <h1>Chrome</h1>
 
-    <h2>Installation</h2>
+        <h3>Installation</h3>
 
-    Install the extension online <a href="https://chrome.google.com/webstore">here</a>.
-    <br />
-    <a href="https://support.google.com/chrome_webstore/answer/2664769">What is chrome extension and how do I download
-        them?</a>.
-    <br />
-    <a href="/public.crx">Download CRX</a>
+        Install the extension online <a href="https://chrome.google.com/webstore"><s>here</s></a>.
+        <a href="https://support.google.com/chrome_webstore/answer/2664769">What is chrome extension and how do I
+            download
+            them?</a>.
+        <br />
+        <a href="/public.crx">Download CRX</a>
 
-    <h2>FAQ</h2>
-    <ul>
-        <li>
-            Select <input spellcheck="false" style="width:3.4em" value='"this"' /> and press <code>Alt + 1</code> to
-            copy.
-        </li>
-        <li>
-            Select <input spellcheck="false" style="width:3.4em" value='"this"' /> and press
-            <code>Alt + Shift + 1</code> to replace.
-        </li>
-        <li>
-            <input spellcheck="false" style="width:2.7em" value="Click" /> and press <code>Alt + Shift + 1</code> to
-            paste.
-        </li>
-        <li>
-            Press <code>Ctrl + Shitf + 1</code> to set slot 1 to default
-        </li>
-        <li>
-            <input spellcheck="false" style="width:2.7em" value="Click" /> and press Ctrl + V to paste default
-        </li>
-    </ul>
+        <h1 id="bookmark">Bookmark</h1>
 
-    <h1 id="bookmark">Bookmark</h1>
+        <h3>Installation</h3>
 
-    <h2>Installation</h2>
+        <b>1.</b> Download <a download="download" href="content.min.js">js</a>,
+        <a download="download" href="content.min.js.zip">zip</a>,
+        <a download="download" href="content.min.js.7z">7z</a>, or
 
-    <b>1.</b> Download <a download="download" href="content.min.js">js</a>,
-    <a download="download" href="content.min.js.zip">zip</a>,
-    <a download="download" href="content.min.js.7z">7z</a>, or
+        <button onclick="copy()">Copy</button>
+        <input id="bookmarkjs" onclick="this.select();this.setSelectionRange(0, 9999999)" value='javascript: var selectedText="",clipboard={1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""};
+                function paste(e){document.execCommand("insertHTML",!1,clipboard[e])}
+                function copy(e){clipboard[e]=selectedText,chrome.storage.sync.set({clipboard:clipboard})}
+                function updateSelectedText(){window.getSelection?selectedText=window.getSelection().toString():document.selection&&"Control"!=
+                document.selection.type&&(selectedText=document.selection.createRange().text)}setInterval(updateSelectedText,100),
+                document.addEventListener("keydown",function(e){
+                e.altKey&&e.shiftKey&&e.code.includes("Digit")?paste(parseInt(e.code.replace("Digit",""))):e.altKey&&e.code.includes("Digit")&&
+                copy(parseInt(e.code.replace("Digit","")))});' /> the text.
 
-    <button onclick="copy()">Copy</button>
-    <input id="bookmarkjs" onclick="this.select();this.setSelectionRange(0, 9999999)" value='javascript: var selectedText="",clipboard={1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""};
-        function paste(e){document.execCommand("insertHTML",!1,clipboard[e])}
-        function copy(e){clipboard[e]=selectedText,chrome.storage.sync.set({clipboard:clipboard})}
-        function updateSelectedText(){window.getSelection?selectedText=window.getSelection().toString():document.selection&&"Control"!=
-        document.selection.type&&(selectedText=document.selection.createRange().text)}setInterval(updateSelectedText,100),
-        document.addEventListener("keydown",function(e){
-        e.altKey&&e.shiftKey&&e.code.includes("Digit")?paste(parseInt(e.code.replace("Digit",""))):e.altKey&&e.code.includes("Digit")&&
-        copy(parseInt(e.code.replace("Digit","")))});' /> the text.
+        <br />
+        <br />
 
-    <br />
-    <br />
+        <b>2. </b> <a target="_new" href="https://www.computerhope.com/issues/ch000858.htm">Create a bookmark
+            (www.computerhope.com)</a> and paste the code in the url field to activate it.
 
-    <b>2. </b> <a target="_new" href="https://www.computerhope.com/issues/ch000858.htm">Create a bookmark
-        (www.computerhope.com)</a> and paste the code in the url field to activate it.
+        <h3>How to use</h3>
 
-    <h2>How to use</h2>
+        When finished with the installation, click on <img class="icon" src="images/icon16.png" /> in the bookmark
+        field.
 
-    When finished with the installation, click on <img class="icon" src="images/icon16.png" /> in the bookmark field.
+        <br />
+        <br />
 
-    <br />
-    <br />
-
-    <b style="color:#aa5555">Disadvantage:</b> You will have to use the bookmark on each website.
-
-    <h1>Example</h1>
-    
-    <ul>
-        <li>
-            Select <input spellcheck="false" style="width:3.4em" value='"this"' /> and press <code>Alt + 1</code> to copy.
-        </li>
-        <li>
-            Select <input spellcheck="false" style="width:3.4em" value='"this"' /> and press <code>Alt + Shift + 1</code> to replace.
-        </li>
-        <li>
-            <input spellcheck="false" style="width:2.7em" value="Click" /> and press <code>Alt + Shift + 1</code> to paste.
-        </li>
-        <li>
-            Press <code>Ctrl + Shitf + 1</code> to set slot 1 to default
-        </li>
-        <li>
-            <input spellcheck="false" style="width:2.7em" value="Click" /> and press Ctrl + V to paste default
-        </li>
-    </ul>
-
+        <b style="color:#aa5555">Disadvantage:</b> You will have to use the bookmark on each website.
+    </main>
     <script>
         function downloadMenu(show) {
             if (show)

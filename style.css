@@ -1,0 +1,123 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5c276;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: url('images/bg.png') fixed;
+    background-size: 100% auto;
+}
+
+main {
+    padding: 5em 0;
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title h1 {
+    display: inline;
+    vertical-align: top;
+    font-size: 32px;
+    margin: 0;
+}
+
+ul {
+    display: inline-block;
+    margin: 0;
+}
+
+.download {
+    display: inline-block;
+    font-weight: 900;
+    margin: 3em 0 1em 0;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    text-decoration: none;
+}
+
+.download .icon {
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+.download .icon .arrow {
+    position: absolute;
+    left: 19px;
+    top: 18px;
+    transition: top 100ms ease;
+}
+
+.download.open .icon .arrow {
+    position: absolute;
+    left: 19px;
+    top: 25px;
+}
+
+.download a {
+    cursor: pointer;
+}
+
+.download .menu {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 100ms ease;
+}
+
+.download.open .menu {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.download .menu a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    width: 10em;
+}
+
+.download .menu a span {
+    color: #ddd;
+}
+
+.title {
+    text-align: center;
+}
+
+.icon {
+    height: 1em;
+}
+
+code {
+    background: #eee;
+    border-radius: 3px;
+    padding: .2em .5em;
+}
+
+input {
+    font-family: monospace;
+    background: #eee;
+    border-radius: 3px;
+    padding: .2em .5em;
+    margin: 0;
+    font-size: 1em;
+    border: .5px solid grey;
+    outline: 0;
+}
+
+ul {
+    list-style-type: lower-latin;
+}
