@@ -5,6 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="aQ1go31Xs0_IY81y4ueMNKoG1XdkQ1HrzJcCSjG2KXc" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133661025-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133661025-3');
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Copy Master</title>
     <link rel="shortcut icon" href="images/icon16.png" type="image/x-icon">
@@ -58,22 +71,26 @@
         <br />
         <ul>
             <li>
-                Select <input spellcheck="false" style="width:3.4em" value='"this"' onclick="this.select();this.setSelectionRange(0, 6)" /> and press <code>Alt + 1</code> to
+                Select <input spellcheck="false" style="width:3.4em" value='"this"'
+                    onclick="this.select();this.setSelectionRange(0, 6)" /> and press <code>Alt + 1</code> to
                 copy.
             </li>
             <li>
-                Select <input spellcheck="false" style="width:3.4em" value='"this"' onclick="this.select();this.setSelectionRange(0, 6)" /> and press
+                Select <input spellcheck="false" style="width:3.4em" value='"this"'
+                    onclick="this.select();this.setSelectionRange(0, 6)" /> and press
                 <code>Alt + Shift + 1</code> to replace.
             </li>
             <li>
-                <input spellcheck="false" style="width:2.7em" value="Click" onclick="this.setSelectionRange(5, 5);" /> and press <code>Alt + Shift + 1</code> to
+                <input spellcheck="false" style="width:2.7em" value="Click" onclick="this.setSelectionRange(5, 5);" />
+                and press <code>Alt + Shift + 1</code> to
                 paste.
             </li>
             <li>
                 Press <code>Ctrl + Shitf + 1</code> to set slot 1 to default
             </li>
             <li>
-                <input spellcheck="false" style="width:2.7em" value="Click" onclick="this.setSelectionRange(5, 5);" /> and press Ctrl + V to paste default
+                <input spellcheck="false" style="width:2.7em" value="Click" onclick="this.setSelectionRange(5, 5);" />
+                and press Ctrl + V to paste default
             </li>
         </ul>
         <br />
@@ -140,6 +157,7 @@
             else
                 document.querySelector(".download").classList.remove("open");
         }
+
         function copy() {
             document.querySelector("#bookmarkjs").select();
             document.querySelector("#bookmarkjs").setSelectionRange(0, 9999999);
